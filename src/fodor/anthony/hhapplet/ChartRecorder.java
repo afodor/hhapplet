@@ -4,6 +4,8 @@ import java.applet.*;
 import java.awt.*;
 import java.awt.image.*;
 
+import javax.swing.JPanel;
+
 /**This class simulates a chart recorder in an electrophysiology lab.  
  * Calling plot(float inDatum) causes inDatum to be plotted and the 
  * chart recorder to move ahead one click.  If the recorder has reached 
@@ -11,7 +13,7 @@ import java.awt.image.*;
  * clear() clears the chart recorder and resets the recorder back to the 
  * beginning of the screen.
  */
-public class ChartRecorder extends Applet
+public class ChartRecorder extends JPanel
 {
 	// this is true if the graph has not yet started or when the image has been
 	// cleared
@@ -78,7 +80,7 @@ public class ChartRecorder extends Applet
 	public static final int K_CURRENT = 7;
 	
 	//going over this will cause an array out of bounds exception
-	public static final int MAXSIZE = 1400;
+	public static final int MAXSIZE = 3500;
 
 	// the size of all these arrays!   Kept here just for speed (since also acessible by array.length)
 	public final int plotSize = 8;
