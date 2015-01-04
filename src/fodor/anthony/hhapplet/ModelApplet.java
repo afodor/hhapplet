@@ -2,6 +2,8 @@
 package fodor.anthony.hhapplet;
 
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.applet.*;
 
 import javax.swing.JFrame;
@@ -257,18 +259,14 @@ public class ModelApplet extends JFrame implements Runnable
 		frame.setResizable(false);
 		frame.setLocation(100, 100);
 		frame.init();
-		frame.run();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	
-		frame.setLayout(new BorderLayout());
-
 	}
 	
     /**  This thread calls the Model class to do the calculations and
      *   sends the results of those calculations to the ChartRecorder
      *   class.
      */
-	public void run()
+	public void run() 
 	{
 		while(true)
 		{
