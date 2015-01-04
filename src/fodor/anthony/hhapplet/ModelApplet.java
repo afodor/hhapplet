@@ -2,6 +2,8 @@
 package fodor.anthony.hhapplet;
 
 import java.awt.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.applet.*;
@@ -254,12 +256,21 @@ public class ModelApplet extends JFrame implements Runnable
 	
 	public static void main(String[] args) throws Exception
 	{
-		ModelApplet frame = new ModelApplet();
+		final ModelApplet frame = new ModelApplet();
 		frame.setSize(1100, 700);
-		frame.setResizable(false);
 		frame.setLocation(100, 100);
 		frame.init();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		// allow for resizing...
+		frame.addComponentListener(new ComponentAdapter()
+		{  
+		        public void componentResized(ComponentEvent evt) 
+		        {
+		        	if( frame.recorder != null)
+		        		frame.recorder.redraw();
+		        }
+		});
 	}
 	
     /**  This thread calls the Model class to do the calculations and
