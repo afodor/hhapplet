@@ -268,7 +268,10 @@ public class ModelApplet extends JFrame implements Runnable
 		        public void componentResized(ComponentEvent evt) 
 		        {
 		        	if( frame.recorder != null)
-		        		frame.recorder.redraw();
+		        	{
+		        		frame.recorder.Clear();
+		        	}
+		        		
 		        }
 		});
 	}
