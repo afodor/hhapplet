@@ -10,7 +10,7 @@ public class ConfigurationForm extends Applet
 {	
 	ChartRecorder recorder;
 	ModelApplet parent;
-	Checkbox[] c = new Checkbox[recorder.plotSize];
+	Checkbox[] c ;
 	Choice cRightAxis;
 	Label L1 = new Label("Right axis: ");
 	
@@ -20,6 +20,7 @@ public class ConfigurationForm extends Applet
 		
 		this.recorder = recorder;
 		this.parent = parent;
+		c = new Checkbox[recorder.plotSize];
 		
 		drawForm();	
 	}		

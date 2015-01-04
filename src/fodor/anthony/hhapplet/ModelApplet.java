@@ -4,13 +4,15 @@ package fodor.anthony.hhapplet;
 import java.awt.*;
 import java.applet.*;
 
+import javax.swing.JFrame;
+
 /**
  *   This class contians the init function that is called when the 
  *   Hodgkin-Huxley neuron model is run.  It connects the Model class,
  *   which does the mathematical calculations, with the ChartRecorder
  *   class, which graph the data.
  */
-public class ModelApplet extends Applet implements Runnable
+public class ModelApplet extends JFrame implements Runnable
 {
 	private Button bStop, bStart, bStimulate, bConfigure, bOptions;
 	
@@ -247,6 +249,20 @@ public class ModelApplet extends Applet implements Runnable
 		cForm.reDrawLabels();
 	}
 	*/
+	
+	public static void main(String[] args) throws Exception
+	{
+		ModelApplet frame = new ModelApplet();
+		frame.setSize(900, 500);
+		frame.setResizable(false);
+		frame.setLocation(100, 100);
+		frame.init();
+		frame.run();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+		frame.setLayout(new BorderLayout());
+
+	}
 	
     /**  This thread calls the Model class to do the calculations and
      *   sends the results of those calculations to the ChartRecorder
