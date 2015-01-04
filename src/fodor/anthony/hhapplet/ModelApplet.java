@@ -255,7 +255,7 @@ public class ModelApplet extends JFrame implements Runnable
 	public static void main(String[] args) throws Exception
 	{
 		ModelApplet frame = new ModelApplet();
-		frame.setSize(900, 500);
+		frame.setSize(1100, 700);
 		frame.setResizable(false);
 		frame.setLocation(100, 100);
 		frame.init();
